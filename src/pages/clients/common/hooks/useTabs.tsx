@@ -37,7 +37,7 @@ export function useTabs({ client }: Props) {
       name: t('documents'),
       href: route('/clients/:id/documents', { id }),
       formatName: () => (
-        <DocumentsTabLabel numberOfDocuments={client?.documents.length} />
+        <DocumentsTabLabel numberOfDocuments={client?.documents?.length || 0} />
       ),
     },
     {
@@ -46,8 +46,8 @@ export function useTabs({ client }: Props) {
       formatName: () => (
         <div className="flex space-x-1">
           <span>{t('locations')}</span>
-          {Boolean(client?.locations.length) && (
-            <span className="font-bold">({client?.locations.length})</span>
+          {Boolean(client?.locations?.length) && (
+            <span className="font-bold">({client?.locations?.length})</span>
           )}
         </div>
       ),
