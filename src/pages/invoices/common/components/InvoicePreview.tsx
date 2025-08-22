@@ -47,6 +47,7 @@ interface Props {
 }
 
 export function InvoicePreview(props: Props) {
+  console.log('InvoicePreview@@@@@', props);
   const [isIntersecting, setIsIntersecting] = useState(false);
   const [debouncedResource, setDebouncedResource] = useState<Resource>(props.resource);
   const endpoint = props.endpoint || '/api/v1/live_preview?entity=:entity';
@@ -120,6 +121,7 @@ export function InvoicePreview(props: Props) {
 
   // Modify all render conditions to use debouncedResource instead of props.resource
   if (debouncedResource?.[props.relationType] && props.for === 'create') {
+    console.log('debouncedResource?.[props.relationType] && props.for === "create"@@@@@', debouncedResource?.[props.relationType] && props.for === 'create');
     return (
       <div ref={divRef}>
         <InvoiceViewer

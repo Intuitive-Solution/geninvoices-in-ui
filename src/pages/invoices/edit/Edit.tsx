@@ -238,7 +238,7 @@ export default function Edit() {
           />
         )}
       </div>
-
+      <div> React Settings: {reactSettings?.show_pdf_preview}</div>
       {reactSettings?.show_pdf_preview && (
         <div className="my-4">
           {invoice && (
